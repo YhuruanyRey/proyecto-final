@@ -6,16 +6,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* Para que el scrolleo en la one page sea suave */
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Para que el scrolleo en la one page sea suave */
 }
 
 body {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.5;
     background-color: #fbfbfb;
-    color: #0f0f0f;
+    color: #000000;
 }
 
 h1 {
@@ -43,8 +42,7 @@ header {
     height: 90px;
     width: 100%;
     background-color: #fbfbfb;
-    /*Propiedad para que quede fijo en la ventana*/
-    position: fixed;
+    position: fixed; /*Propiedad para que quede fijo en la ventana*/
     top: 0;
     left: 0;
     box-shadow: 0 3px 10px -5px #5f5f5f;
@@ -117,6 +115,8 @@ a.boton {
     display: inline-block;
 }
 
+  
+
 article.hablemos {
     justify-content: space-around;
     background-color: rgba(175, 89, 158, 0.3);
@@ -135,8 +135,20 @@ article.hablemos {
     width: 15em;
     height: 15em;
     gap: 5%;
+    }
+    #mail-icon,
+#github-icon,
+#linkedin-icon {
+  transition: transform 0.3s ease;
 }
 
+#mail-icon:hover,
+#github-icon:hover,
+#linkedin-icon:hover {
+  transform: scale(1.2);
+}
+
+      
 footer{
     background-color: #af599e;
     color: #fbfbfb;
@@ -146,4 +158,46 @@ footer{
     text-align: center;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+footer button#change-font {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+/*permite que el boton y el menu tegan transicion al pasar el mouse*/
+li.menu-item:hover,
+li.menu-item a.active,
+a.boton:hover {
+    background:rgb(150, 100, 237);
+    transition: background-color 0.3s;
+}
+
+/*desktop*/
+@media (min-width: 1024px){
+    h1{
+        font-size: 48px;
+        text-align: left;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    section#inicio {
+        flex-direction: row;
+    }
+    article.presentacion {
+        width: 50%;
+        text-align: left;
+    }
+    ul#contacto-links li {
+        margin: 32px;
+    }
+}
+
+body.change-font {
+    font-family: 'Courier New', Courier, monospace;
 }
